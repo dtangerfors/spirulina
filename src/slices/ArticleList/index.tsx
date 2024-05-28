@@ -4,7 +4,12 @@ import { Content, LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
-const getDomain = (field) => {
+type LinkProps = {
+  link_type: string;
+  url: string;
+}
+
+const getDomain = (field: LinkProps) => {
   const domain = new URL(field.url);
 
   return domain.hostname
@@ -29,7 +34,7 @@ const ArticleList = ({ slice }: ArticleListProps): JSX.Element => {
                 <PrismicRichText field={item.title} components={textComponents} />
                 <PrismicRichText field={item.body} components={textComponents} />
                 <p className="mt-2"> {item.pretext_link} <i className="ri-arrow-right-line"></i> {" "}
-                  <PrismicNextLink field={item.link}>{getDomain(item.link)}</PrismicNextLink>
+                  <PrismicNextLink field={item.link}>{getDomain(item.link as LinkProps)}</PrismicNextLink>
                 </p>
               </li>
             )
