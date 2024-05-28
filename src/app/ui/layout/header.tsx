@@ -1,6 +1,6 @@
 function Link({url, label}: {url: any, label: string}) {
   return (
-    <a href={url} className="font-sans text-base no-underline leading-5 text-black dark:text-white hover:text-primary">{label}</a>
+    <a href={url} className="font-sans text-base no-underline leading-5 text-black hover:text-primary">{label}</a>
   )
 }
 
