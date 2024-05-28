@@ -5,14 +5,48 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    colors: {
+      primary: {
+        DEFAULT: "#236bdc",
+        "50": "#eff8ff",
+        "100": "#dceefd",
+        "200": "#c1e3fc",
+        "300": "#96d2fa",
+        "400": "#64b8f6",
+        "500": "#409af1",
+        "600": "#2a7de6",
+        "700": "#236bdc",
+        "800": "#2253ab",
+        "900": "#214887",
+        "950": "#192d52",
+        "1000": "#061328",
       },
+      gray: {
+        DEFAULT: "#151517",
+        "50": "#f7f7f8",
+        "100": "#eeeef0",
+        "200": "#dadadd",
+        "300": "#b9bac0",
+        "400": "#93949d",
+        "500": "#757682",
+        "600": "#5f5f6a",
+        "700": "#4e4e56",
+        "800": "#42424a",
+        "900": "#3a3a40",
+        "950": "#151517",
+      },
+      white: "#FFFFFF",
+      black: "#151517",
+    },
+    fontFamily: {
+      display: ["tablet-gothic-wide", "sans-serif"],
+      sans: ["tablet-gothic", "sans-serif"],
+      "sans-condensed": ["tablet-gothic-semi-condensed", "sans-serif"],
+    },
+    extend: {
     },
   },
   plugins: [],

@@ -1,0 +1,34 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex consequat in mollit cupidatat anim amet ut aliqua sint dolore nisi ex elit nulla dolore. Ea velit cillum magna sint mollit laboris elit consectetur consequat reprehenderit fugiat sunt anim est."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skill",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "listen",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

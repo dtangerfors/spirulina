@@ -1,0 +1,84 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Shoot"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"position",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Sunt aliquip ea magna adipisicing minim sit aute aliquip nostrud officia cupidatat pariatur ipsum. Incididunt qui eiusmod laboris."
+									}
+								}
+							]
+						}
+					],
+					[
+						"company",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Worse"
+									}
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Incididunt deserunt tempor labore. Deserunt amet dolore ex sunt eiusmod irure consequat enim ut exercitation excepteur. Amet exercitation eu cillum."
+									}
+								}
+							]
+						}
+					],
+					[
+						"start_date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Date",
+							"value": "2012-07-28"
+						}
+					],
+					[
+						"end_date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Date",
+							"value": "2019-06-27"
+						}
+					]
+				]
+			}
+		]
+	}
+]

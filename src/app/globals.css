@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html.lenis, html.lenis body {
+  height: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.card {
+  @apply col-span-6 lg:col-span-3 mb-12 lg:mb-40;
+}
+
+.display-grid .card:nth-child(9n + 1) {
+  @apply col-span-full lg:col-span-9;
+}
+
+.display-grid .card:nth-child(9n + 1) figure {
+  @apply aspect-video;
+}
+
+.display-grid .card:nth-child(9n + 2) {
+  @apply self-end;
+}
+
+.display-grid .card:nth-child(9n + 5) {
+  @apply lg:col-span-6;
+}
+
+a {
+  @apply hover:text-primary
 }
