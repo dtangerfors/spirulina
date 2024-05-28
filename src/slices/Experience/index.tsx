@@ -26,12 +26,12 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 <p className="max-w-prose pb-4">{asText(item.description)}</p>
                 <p>
                   <span className="capitalize">
-                    {new Date(item.start_date).toLocaleDateString("en-US", {
+                    {new Date(item.start_date as string).toLocaleDateString("en-US", {
                       month: "long",
                       year: "numeric",
                     })}
                   </span>{" "}&mdash;{" "}
-                  <span>{item.end_date ? new Date(item.start_date).toLocaleDateString("en-US", {
+                  <span>{item.end_date ? new Date(item.start_date as string).toLocaleDateString("en-US", {
                       month: "long",
                       year: "numeric",
                     }) : "Present"}</span>
