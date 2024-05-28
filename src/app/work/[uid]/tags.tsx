@@ -1,7 +1,30 @@
-import { CaseDocumentData } from "../../../../prismicio-types";
-import { PrismicRichText, SliceZone } from "@prismicio/react"
 
-export function Tags({items}: {items: CaseDocumentData["categories"]}) {
+import { RichTextField } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react"
+
+export type CategoryData = {
+  category: {
+    id: string;
+    type: string;
+    tags: [];
+    lang: string;
+    slug: string;
+    first_publication_date: string;
+    last_publication_date: string;
+    uid: string;
+    url: string;
+    data: DataField;
+    link_type: string;
+    isBroken: boolean;
+  }
+}
+
+type DataField = {
+  name: RichTextField | null | undefined;
+}
+
+export function Tags({items}: {items: CategoryData[]}) {
+
   return (
     <ul className="flex flex-wrap gap-2">
       {items.map((item) => {

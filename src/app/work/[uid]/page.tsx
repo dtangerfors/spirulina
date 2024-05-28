@@ -1,12 +1,11 @@
 import { Container } from "@/app/ui/layout/containers";
-import { createClient } from "@/prismicio"
+import { createClient } from "@/prismicio";
 import { Metadata } from "next";
 import { asText } from "@prismicio/client";
-import { notFound } from "next/navigation"
-import { SliceZone } from "@prismicio/react"
-import {components} from "@/slices"
-import { Tags } from "./tags";
-import { PrismicNextImage } from "@prismicio/next";
+import { notFound } from "next/navigation";
+import { SliceZone } from "@prismicio/react";
+import {components} from "@/slices";
+import { CategoryData, Tags } from "./tags";
 import { HeroImage } from "@/app/ui/hero_image";
 
 type PageProps = {
@@ -40,7 +39,7 @@ export default async function Page({ params }: {params: PageProps}) {
         </figure>
         <Container className="pt-4">
           <div className="col-span-full xl:col-span-3">
-            <Tags items={page.data.categories} />          
+            <Tags items={(page.data.categories) as CategoryData[]} />      
           </div>
           <div className="col-span-full xl:col-span-7">
             <h1 className="text-4xl xl:text-6xl text-black">
