@@ -6,7 +6,7 @@ import { RefObject, useRef } from "react";
 
 export function HeroImage({image}: {image: ImageField}) {
 
-  const container = useRef<RefObject<HTMLElement>>();
+  const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"]
