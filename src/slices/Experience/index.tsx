@@ -31,7 +31,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                       year: "numeric",
                     })}
                   </span>{" "}&mdash;{" "}
-                  <span>{item.end_date ? new Date(item.start_date as string).toLocaleDateString("en-US", {
+                  <span>{item.end_date ? new Date(item.end_date as string).toLocaleDateString("en-US", {
                       month: "long",
                       year: "numeric",
                     }) : "Present"}</span>
