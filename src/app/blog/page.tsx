@@ -48,7 +48,7 @@ export default async function BlogPage() {
       </header>
 
       <section className="relative">
-        <ul>
+        <ul className="flex flex-col gap-16">
           {posts.map(post => {
             return (
               <li key={post.id}>
