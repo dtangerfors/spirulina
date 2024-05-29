@@ -1,11 +1,32 @@
 import { createClient } from "@/prismicio";
+import { Metadata } from "next";
 import { Container } from "@/app/ui/layout/containers";
-import { PrismicNextLink } from "@prismicio/next";
-import { PrismicText } from "@prismicio/react";
 import { BlogCard } from "../ui/blog_card";
+import { PrismicRichText } from "@prismicio/react";
+
+const textComponents = {
+  heading1: ({ children }: {children: any}) => (
+    <h1 className="text-3xl xl:text-6xl text-black font-sans-condensed font-thin uppercase">{children}</h1>
+  ),
+  strong: ({ children }: {children: any}) => (
+    <strong className="font-display font-extrabold">{children}</strong>
+  ),
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getSingle("blog_index");
+
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
+}
 
 export default async function BlogPage() {
   const client = createClient();
+
+  const page = await client.getSingle("blog_index");
 
   const posts = await client.getAllByType("blog_post", {
     orderings: [
@@ -20,8 +41,8 @@ export default async function BlogPage() {
     <main className="flex flex-col min-h-screen">
       <header>
         <Container>
-          <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
-            <h1 className="font-display text-4xl xl:text-7xl text-black font-extrabold uppercase">Blog</h1>
+          <div className="col-span-full xl:col-start-4 xl:col-span-6 py-20 xl:py-32">
+            <PrismicRichText field={page.data.title} components={textComponents} />
           </div>
         </Container>
       </header>

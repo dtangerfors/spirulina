@@ -19,7 +19,7 @@ export default async function WorkPage() {
 
   return (
     <main className="flex min-h-screen flex-col justify-between">
-      <div className="relative xl:sticky top-9 z-50">
+      <div className="relative xl:sticky top-9 z-30">
         <Container className="gap-y-2 max-xl:pt-9">
           <div className="col-span-2">
             <p>Filter by</p>
@@ -34,7 +34,7 @@ export default async function WorkPage() {
       <header>
         <Container>
           <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
-            <h1 className="font-display text-4xl xl:text-7xl text-black font-extrabold uppercase">Selected work</h1>
+            <h1 className="font-display text-4xl xl:text-6xl text-black font-extrabold uppercase">Selected work</h1>
           </div>
         </Container>
       </header>

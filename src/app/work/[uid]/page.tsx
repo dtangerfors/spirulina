@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: {params: PageProps}): Promise
   const page = await client.getByUID("case", params.uid).catch(() => notFound());
 
   return {
-    title: page.data.meta_title || `${asText(page.data.title)}`,
+    title: page.data.meta_title || `${asText(page.data.title)} | Daniel Tängerfors`,
     description: page.data.meta_description,
   };
 }
