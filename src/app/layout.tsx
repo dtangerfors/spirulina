@@ -27,7 +27,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#236bdc" />
       </head>
-      <body className="antialiased text-black text-base">
+      <body className="flex flex-col min-h-svh antialiased text-black text-base">
         <SmoothScrolling>
           <Header />
           {children}

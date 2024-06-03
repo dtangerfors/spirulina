@@ -118,6 +118,15 @@
           }
         }
       },
+      "isProtected": {
+        "type": "Boolean",
+        "config": {
+          "label": "Protected",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
