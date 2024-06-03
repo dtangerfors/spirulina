@@ -2,11 +2,13 @@ import { Container } from "@/app/ui/layout/containers";
 import { createClient } from "@/prismicio";
 import { Metadata } from "next";
 import { asText } from "@prismicio/client";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
 import {components} from "@/slices";
 import { CategoryData, Tags } from "./tags";
 import { HeroImage } from "@/app/ui/hero_image";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 
 type PageProps = {
   uid: string;
@@ -23,13 +25,19 @@ export async function generateMetadata({ params }: {params: PageProps}): Promise
 }
 
 export default async function Page({ params }: {params: PageProps}) {
-  const client = createClient()
+  const client = createClient();
 
   const page = await client
     .getByUID("case", params.uid, {
       fetchLinks: ['category.name'],
     })
     .catch(() => notFound());
+  
+  const session = await getServerSession(authOptions);
+
+  if (!session && page.data.isProtected) {
+    redirect(`/api/auth/signin?callbackUrl=${page.url}`)
+  }
 
   return (
     <article className="flex flex-col gap-16">

@@ -399,6 +399,18 @@ interface CaseDocumentData {
   categories: prismic.GroupField<Simplify<CaseDocumentDataCategoriesItem>>;
 
   /**
+   * Protected field in *Case*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: case.isProtected
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  isProtected: prismic.BooleanField;
+
+  /**
    * Slice Zone field in *Case*
    *
    * - **Field Type**: Slice Zone
