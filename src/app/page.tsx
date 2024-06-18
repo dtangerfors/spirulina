@@ -11,7 +11,7 @@ const textComponents = {
     <h1 className="text-3xl xl:text-9xl text-primary-1000 font-sans-condensed font-thin uppercase">{children}</h1>
   ),
   paragraph: ({ children }: {children: any}) => (
-    <span className="inline-block self-start last:mt-auto last:text-right max-xl:last:w-3/4 max-lg:self-end">{children}</span>
+    <span className="leading-none inline-block last:mt-auto last:text-right md:w-1/2 last:w-2/3 xl:last:w-1/2 last:self-end">{children}</span>
   ),
   strong: ({ children }: {children: any}) => (
     <strong className="font-display font-extrabold">{children}</strong>
@@ -51,7 +51,7 @@ export default async function Home() {
         <figure className="absolute w-full h-full inset-0">
           <HeroImage image={page.data.hero_image} />
         </figure>
-        <h1 className="relative z-10 w-full h-full flex max-xl:flex-col text-5xl xl:text-9xl text-primary-1000 font-sans-condensed font-thin uppercase">
+        <h1 className="relative z-10 w-full h-full flex flex-col text-5xl md:text-7xl xl:text-9xl text-primary-1000 font-sans-condensed font-thin uppercase">
           <PrismicRichText field={page.data.title} components={textComponents} />
         </h1>
       </header>
