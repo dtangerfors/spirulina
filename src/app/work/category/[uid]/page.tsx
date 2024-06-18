@@ -31,6 +31,12 @@ export default async function Category({ params }: {params: PageProps}) {
   // Use the category ID to filter for posts with that category
   const cases = await client.getAllByType("case", {
     filters: [prismic.filter.at("my.case.categories.category", category.id)],
+    orderings: [
+      {
+        field: "document.first_publication_date",
+        direction: "desc",
+      },
+    ],
   })
 
   return (

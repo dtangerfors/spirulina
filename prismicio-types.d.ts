@@ -411,6 +411,18 @@ interface CaseDocumentData {
   isProtected: prismic.BooleanField;
 
   /**
+   * Featured field in *Case*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: case.isFeatured
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  isFeatured: prismic.BooleanField;
+
+  /**
    * Slice Zone field in *Case*
    *
    * - **Field Type**: Slice Zone

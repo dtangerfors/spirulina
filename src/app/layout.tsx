@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import 'remixicon/fonts/remixicon.css'
-import { PrismicPreview } from '@prismicio/next'
-import { repositoryName } from '@/prismicio'
+import "remixicon/fonts/remixicon.css";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 import { Header } from "./ui/layout/header";
 import { Footer } from "./ui/layout/footer";
 import { SmoothScrolling } from "./ui/smooth_scrolling";
@@ -29,9 +29,9 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-svh antialiased text-black text-base">
         <SmoothScrolling>
-          <Header />
-          {children}
-          <Footer />
+            <Header />
+            {children}
+            <Footer />
         </SmoothScrolling>
         <PrismicPreview repositoryName={repositoryName} />
       </body>

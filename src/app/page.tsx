@@ -1,4 +1,5 @@
 
+import * as prismic from "@prismicio/client"
 import { createClient } from "@/prismicio";
 import { Metadata } from "next";
 import { CaseCard } from "./ui/case_card";
@@ -34,6 +35,7 @@ export default async function Home() {
   const page = await client.getSingle("home");
 
   const cases = await client.getAllByType("case", {
+    filters: [prismic.filter.not("my.case.isFeatured", false)],
     orderings: [
       {
         field: "document.first_publication_date",

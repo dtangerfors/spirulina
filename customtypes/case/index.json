@@ -127,6 +127,15 @@
           "placeholder_false": "false"
         }
       },
+      "isFeatured": {
+        "type": "Boolean",
+        "config": {
+          "label": "Featured",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
