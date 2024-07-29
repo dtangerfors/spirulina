@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import { PrismicPreview } from "@prismicio/next";
@@ -27,11 +28,14 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#236bdc" />
       </head>
+      <GoogleTagManager gtmId="GTM-WP8KW96" />
       <body className="flex flex-col min-h-svh antialiased text-black text-base">
         <SmoothScrolling>
-            <Header />
-            {children}
-            <Footer />
+            <Header key={"body-header"} />
+            <div key={"body-main"}>
+              {children}
+            </div>
+            <Footer key={"body-footer"} />
         </SmoothScrolling>
         <PrismicPreview repositoryName={repositoryName} />
       </body>
