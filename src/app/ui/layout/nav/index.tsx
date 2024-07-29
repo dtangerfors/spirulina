@@ -14,7 +14,7 @@ export function MobileNavigation({ open, setOpen }: { open: boolean, setOpen: (v
         y: open ? 0 : "-100%",
       }}
       transition={{ delay: open ? 0 : 1, type: "tween", duration: 0.8 }}
-      className="fixed inset-0 z-40 w-screen h-screen bg-white dark:bg-black p-4 pb-safe px-safe supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh]"
+      className="fixed inset-0 z-40 w-screen h-screen bg-white p-4 pb-safe px-safe supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh]"
     >
       <Container className="h-full pt-20 !mx-0">
         <ul className="flex flex-col flex-1 col-span-3 lg:col-span-6">
