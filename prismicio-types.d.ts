@@ -304,7 +304,11 @@ export interface CaseDocumentDataCategoriesItem {
   category: prismic.ContentRelationshipField<"category">;
 }
 
-type CaseDocumentDataSlicesSlice = SlideshowSlice | TextSlice | ImageSlice;
+type CaseDocumentDataSlicesSlice =
+  | LighthouseSlice
+  | SlideshowSlice
+  | TextSlice
+  | ImageSlice;
 
 /**
  * Content for Case documents
@@ -887,6 +891,91 @@ type ImageSliceVariation = ImageSliceDefault;
 export type ImageSlice = prismic.SharedSlice<"image", ImageSliceVariation>;
 
 /**
+ * Primary content in *Lighthouse → Primary*
+ */
+export interface LighthouseSliceDefaultPrimary {
+  /**
+   * Title field in *Lighthouse → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lighthouse.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Performance field in *Lighthouse → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lighthouse.primary.performance
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  performance: prismic.NumberField;
+
+  /**
+   * Accessibility field in *Lighthouse → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lighthouse.primary.accessibility
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  accessibility: prismic.NumberField;
+
+  /**
+   * Best Practices field in *Lighthouse → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lighthouse.primary.best_practices
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  best_practices: prismic.NumberField;
+
+  /**
+   * SEO field in *Lighthouse → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lighthouse.primary.seo
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  seo: prismic.NumberField;
+}
+
+/**
+ * Default variation for Lighthouse Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LighthouseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LighthouseSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Lighthouse*
+ */
+type LighthouseSliceVariation = LighthouseSliceDefault;
+
+/**
+ * Lighthouse Shared Slice
+ *
+ * - **API ID**: `lighthouse`
+ * - **Description**: Lighthouse
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LighthouseSlice = prismic.SharedSlice<
+  "lighthouse",
+  LighthouseSliceVariation
+>;
+
+/**
  * Primary content in *Skills → Primary*
  */
 export interface SkillsSliceDefaultPrimary {
@@ -1104,6 +1193,10 @@ declare module "@prismicio/client" {
       ImageSliceDefaultPrimary,
       ImageSliceVariation,
       ImageSliceDefault,
+      LighthouseSlice,
+      LighthouseSliceDefaultPrimary,
+      LighthouseSliceVariation,
+      LighthouseSliceDefault,
       SkillsSlice,
       SkillsSliceDefaultPrimary,
       SkillsSliceDefaultItem,

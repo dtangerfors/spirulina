@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --progress {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -44,4 +50,21 @@ html.lenis, html.lenis body {
 
 a {
   @apply hover:text-primary
+}
+
+.donut-chart {
+  --bar-width: 1rem;
+  transition: --progress 500ms linear;
+  background: conic-gradient(
+    var(--color-dark),
+    var(--color-dark) var(--progress),
+    var(--color-dark-glare) 0%
+  );
+  @apply w-full aspect-square grid place-items-center rounded-full bg-[conic-gradient(#236bdc,_#236bdc_var(--progress),_#dceefd_0%)]
+}
+
+.donut-chart::after {
+  content: attr(aria-valuenow) "%";
+  width: calc(100% - var(--bar-width));
+  @apply grid place-items-center aspect-square bg-white rounded-full text-2xl font-bold;
 }

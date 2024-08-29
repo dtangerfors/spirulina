@@ -1,0 +1,56 @@
+{
+  "id": "lighthouse",
+  "type": "SharedSlice",
+  "name": "Lighthouse",
+  "description": "Lighthouse",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3,heading4"
+          }
+        },
+        "performance": {
+          "type": "Number",
+          "config": {
+            "label": "Performance",
+            "placeholder": ""
+          }
+        },
+        "accessibility": {
+          "type": "Number",
+          "config": {
+            "label": "Accessibility",
+            "placeholder": ""
+          }
+        },
+        "best_practices": {
+          "type": "Number",
+          "config": {
+            "label": "Best Practices",
+            "placeholder": ""
+          }
+        },
+        "seo": {
+          "type": "Number",
+          "config": {
+            "label": "SEO",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

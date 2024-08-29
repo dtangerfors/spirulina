@@ -1,0 +1,40 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"performance": {
+				"__TYPE__": "FieldContent",
+				"value": "77",
+				"type": "Number"
+			},
+			"accessibility": {
+				"__TYPE__": "FieldContent",
+				"value": "47",
+				"type": "Number"
+			},
+			"best_practices": {
+				"__TYPE__": "FieldContent",
+				"value": "10",
+				"type": "Number"
+			},
+			"seo": {
+				"__TYPE__": "FieldContent",
+				"value": "44",
+				"type": "Number"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Similar"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

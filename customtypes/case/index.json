@@ -141,6 +141,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "lighthouse": {
+              "type": "SharedSlice"
+            },
             "slideshow": {
               "type": "SharedSlice"
             },

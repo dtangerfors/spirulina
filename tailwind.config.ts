@@ -40,6 +40,8 @@ const config: Config = {
       },
       white: "#FFFFFF",
       black: "#151517",
+      green: "#cad178", 
+      red: "#c03221"
     },
     fontFamily: {
       display: ["tablet-gothic-wide", "sans-serif"],
