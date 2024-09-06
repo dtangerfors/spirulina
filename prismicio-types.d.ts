@@ -427,6 +427,18 @@ interface CaseDocumentData {
   isFeatured: prismic.BooleanField;
 
   /**
+   * Coming soon field in *Case*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: case.isComing
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  isComing: prismic.BooleanField;
+
+  /**
    * Slice Zone field in *Case*
    *
    * - **Field Type**: Slice Zone
