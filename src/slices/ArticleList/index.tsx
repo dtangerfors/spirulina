@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion";
 import { Container } from "@/app/ui/layout/containers";
 import { textComponents } from "@/app/ui/typography";
 import { Content, LinkField } from "@prismicio/client";
@@ -30,13 +32,18 @@ const ArticleList = ({ slice }: ArticleListProps): JSX.Element => {
         <ul className="flex flex-col gap-12">
           {slice.items.map((item, i) => {
             return (
-              <li key={`${slice.id}-${i}`}>
+              <motion.li 
+                key={`${slice.id}-${i}`}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "0px 0px -200px 0px" }}
+              >
                 <PrismicRichText field={item.title} components={textComponents} />
                 <PrismicRichText field={item.body} components={textComponents} />
                 <p className="mt-2"> {item.pretext_link} <i className="ri-arrow-right-line"></i> {" "}
                   <PrismicNextLink field={item.link}>{getDomain(item.link as LinkProps)}</PrismicNextLink>
                 </p>
-              </li>
+              </motion.li>
             )
           })}
         </ul>

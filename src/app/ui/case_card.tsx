@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion";
 import { PrismicNextImage } from "@prismicio/next";
 import Link from "next/link";
 import { CaseDocument } from "../../../prismicio-types";
@@ -21,13 +23,25 @@ export function CaseCard({item}: {item: CaseDocument}) {
 
   if (item.data.isComing) return (
     <div key={item.id} className="card relative overflow-hidden">
-      <CaseCardContent data={item.data} />
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "0px 0px -200px 0px" }}
+      >
+        <CaseCardContent data={item.data} />
+      </motion.div>
     </div>
   )
 
   return (
     <Link href={`${item.url}`} key={item.id} className="card relative overflow-hidden">
-      <CaseCardContent data={item.data} />
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "0px 0px -200px 0px" }}
+      >
+        <CaseCardContent data={item.data} />
+      </motion.div>
     </Link>
   )
 }
