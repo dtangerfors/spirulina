@@ -31,11 +31,11 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-WP8KW96" />
       <body className="flex flex-col min-h-svh antialiased text-black text-base">
         <SmoothScrolling>
-            <Header key={"body-header"} />
-            <div key={"body-main"}>
-              {children}
-            </div>
-            <Footer key={"body-footer"} />
+          <Header key={"body-header"} />
+          <div key={"body-main"}>
+            {children}
+          </div>
+          <Footer key={"body-footer"} />
         </SmoothScrolling>
         <PrismicPreview repositoryName={repositoryName} />
       </body>

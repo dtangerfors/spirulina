@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { CaseCard } from "./ui/case_card";
 import { PrismicRichText } from "@prismicio/react";
 import { HeroImage } from "./ui/hero_image";
+import IndexSectionCard from "./ui/index_section_card";
 
 const textComponents = {
   heading1: ({ children }: {children: any}) => (
@@ -45,7 +46,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="flex min-h-screen flex-col justify-between">
+    <main key={"main"} className="flex min-h-screen flex-col justify-between">
       
       <header className="relative p-4 pt-[4.5rem] xl:pt-9 h-svh bg-primary-100">
         <figure className="absolute w-full h-full inset-0">
@@ -57,9 +58,9 @@ export default async function Home() {
       </header>
 
       <section className="relative p-4">
-        <div className="display-grid grid grid-cols-12 grid-rows-[auto] gap-4 w-full">
+        <div className="flex flex-col gap-4 w-full">
         {cases.map((item) => (
-          <CaseCard item={item} key={item.id} />
+          <IndexSectionCard item={item} key={item.id} />
         ))}
         </div>
       </section>

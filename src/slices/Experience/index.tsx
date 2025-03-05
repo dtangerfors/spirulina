@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion";
 import { Content, asText } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Container } from "@/app/ui/layout/containers";
@@ -21,7 +23,12 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         <ul className="flex flex-col gap-16">
           {slice.items.map((item, i) => {
             return (
-              <li key={`${slice.id}-${i}`}>
+              <motion.li 
+                key={`${slice.id}-${i}`}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "0px 0px -200px 0px" }}
+              >
                 <h3 className="text-2xl pb-4">{asText(item.position)} &mdash; {asText(item.company)}</h3>
                 <p className="max-w-prose pb-4">{asText(item.description)}</p>
                 <p>
@@ -36,7 +43,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                       year: "numeric",
                     }) : "Present"}</span>
                   </p>
-              </li>
+              </motion.li>
             )
           })}
         </ul>

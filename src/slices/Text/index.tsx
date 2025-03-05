@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion";
 import { Container } from "@/app/ui/layout/containers";
 import { textComponents } from "@/app/ui/typography";
 import { Content } from "@prismicio/client";
@@ -17,14 +19,26 @@ const Text = ({ slice }: TextProps): JSX.Element => {
   return (
     <Container>
       {slice.variation === "default" && (
-        <div className="col-span-full xl:col-start-4 xl:col-span-7 xl:columns-2 gap-x-4">
+        <motion.div 
+          key={`${slice.id}-${slice.variation}`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "0px 0px -200px 0px" }}
+          className="col-span-full xl:col-start-4 xl:col-span-7 xl:columns-2 gap-x-4"
+        >
           <PrismicRichText field={slice.primary.text} components={textComponents} />
-        </div>
+        </motion.div>
       )}
       {slice.variation === "fullSpanText" && (
-        <div className="col-span-full xl:col-start-4 xl:col-span-7">
+        <motion.div 
+          key={`${slice.id}-${slice.variation}`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "0px 0px -200px 0px" }}
+          className="col-span-full xl:col-start-4 xl:col-span-7"
+        >
           <PrismicRichText field={slice.primary.text} components={textComponents} />
-        </div>
+        </motion.div>
       )}
       
     </Container>
