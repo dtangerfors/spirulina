@@ -9,13 +9,13 @@ import IndexSectionCard from "./ui/index_section_card";
 
 const textComponents = {
   heading1: ({ children }: {children: any}) => (
-    <h1 className="text-3xl xl:text-9xl text-primary-1000 font-sans-condensed font-thin uppercase">{children}</h1>
+    <h1 className="text-3xl xl:text-9xl text-primary-1000 font-serif font-normal uppercase">{children}</h1>
   ),
   paragraph: ({ children }: {children: any}) => (
     <span className="leading-none inline-block last:mt-auto last:text-right md:w-1/2 last:w-2/3 xl:last:w-1/2 last:self-end">{children}</span>
   ),
   strong: ({ children }: {children: any}) => (
-    <strong className="font-display font-extrabold">{children}</strong>
+    <strong className="font-sans font-extrabold not-italic uppercase tracking-tighter">{children}</strong>
   ),
 }
 
@@ -52,7 +52,7 @@ export default async function Home() {
         <figure className="absolute w-full h-full inset-0">
           <HeroImage image={page.data.hero_image} />
         </figure>
-        <h1 className="relative z-10 w-full h-full flex flex-col text-5xl md:text-7xl xl:text-9xl text-primary-1000 font-sans-condensed font-thin uppercase">
+        <h1 className="relative z-10 w-full h-full flex flex-col text-5xl md:text-7xl xl:text-9xl text-primary-1000 font-serif font-normal italic tracking-tightest">
           <PrismicRichText field={page.data.title} components={textComponents} />
         </h1>
       </header>

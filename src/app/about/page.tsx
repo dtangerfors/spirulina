@@ -9,10 +9,10 @@ import { HeroImage } from "../ui/hero_image";
 
 const textComponents = {
   heading1: ({ children }: {children: any}) => (
-    <h1 className="text-3xl xl:text-6xl text-black font-sans-condensed font-thin uppercase">{children}</h1>
+    <h1 className="text-3xl xl:text-6xl text-black font-serif font-normal italic text-balance">{children}</h1>
   ),
   strong: ({ children }: {children: any}) => (
-    <strong className="font-display font-extrabold">{children}</strong>
+    <strong className="font-sans font-extrabold not-italic uppercase tracking-tight">{children}</strong>
   ),
 }
 

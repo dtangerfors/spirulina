@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
+// Supports weights 400-800
+import '@fontsource-variable/eb-garamond';
+import '@fontsource-variable/eb-garamond/wght-italic.css';
+import '@fontsource/aileron/400.css';
+import '@fontsource/aileron/400-italic.css';
+import '@fontsource/aileron/800.css';
+import '@fontsource/aileron/800-italic.css';
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Header } from "./ui/layout/header";
@@ -22,7 +29,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://use.typekit.net/tgj4zdp.css"/>
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />

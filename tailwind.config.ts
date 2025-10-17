@@ -44,9 +44,10 @@ const config: Config = {
       red: "#c03221"
     },
     fontFamily: {
-      display: ["tablet-gothic-wide", "sans-serif"],
-      sans: ["tablet-gothic", "sans-serif"],
-      "sans-condensed": ["tablet-gothic-semi-condensed", "sans-serif"],
+      display: ["Aileron", "sans-serif"],
+      sans: ["Aileron", "sans-serif"],
+      serif: ["EB Garamond Variable", "serif"],
+      "sans-condensed": ["Aileron", "sans-serif"],
     },
     extend: {
     },

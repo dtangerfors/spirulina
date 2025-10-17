@@ -57,8 +57,8 @@ export default async function Category({ params }: {params: PageProps}) {
       <Container>
         <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
           <h1 className="text-4xl xl:text-6xl text-black">
-            <span className="font-sans-condensed font-thin">Selected works in </span><br/>
-            <span className="font-display font-thin uppercase"><PrismicText field={category.data.name} /></span>
+            <span className="font-serif font-normal italic">Selected works in </span><br/>
+            <span className="font-sans font-extrabold uppercase tracking-tight"><PrismicText field={category.data.name} /></span>
           </h1>
         </div>
       </Container>

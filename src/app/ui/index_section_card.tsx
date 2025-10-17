@@ -28,10 +28,10 @@ export default function IndexSectionCard({
           )}
         </div>
         <div className="col-span-full xl:col-span-7">
-          <h2 className="text-4xl xl:text-6xl text-black">
+          <h2 className="text-4xl xl:text-6xl text-black text-balance">
             <Link href={`${item.url}`}>
-              <span className="inline font-display font-extrabold uppercase">{asText(item.data.title)}. </span>
-              <span className="inline font-sans-condensed font-thin">{asText(item.data.subtitle)}</span>
+              <span className="inline font-display font-normal uppercase tracking-tight">{asText(item.data.title)}. </span>
+              <span className="inline font-serif font-normal italic text-[1.05em]">{asText(item.data.subtitle)}</span>
             </Link>
           </h2>
         </div>

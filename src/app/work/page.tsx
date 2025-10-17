@@ -34,7 +34,7 @@ export default async function WorkPage() {
       <header>
         <Container>
           <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
-            <h1 className="font-display text-4xl xl:text-6xl text-black font-extrabold uppercase">Selected work</h1>
+            <h1 className="font-display text-4xl xl:text-6xl text-black font-extrabold uppercase tracking-tight">Selected work</h1>
           </div>
         </Container>
       </header>

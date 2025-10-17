@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: {params: PageProps}) {
         <Container>
           <div className="col-span-full xl:col-span-7 xl:col-start-4">
             <h1 className="text-4xl xl:text-6xl text-black pb-4">
-              <span className="inline font-display font-extrabold uppercase">{asText(post.data.title)}</span>
+              <span className="inline font-sans font-extrabold uppercase tracking-tight">{asText(post.data.title)}</span>
             </h1>
             <p>Posted on {publicationDate}</p>
           </div>

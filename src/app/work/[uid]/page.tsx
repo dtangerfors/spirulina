@@ -42,20 +42,21 @@ export default async function Page({ params }: {params: PageProps}) {
   return (
     <article className="flex flex-col gap-16">
       <header className="min-h-svh">
-        <figure className="h-[70svh]">
-          <HeroImage image={page.data.hero_image} />
-        </figure>
-        <Container className="pt-4">
+        <Container className="pt-40 pb-20">
           <div className="col-span-full xl:col-span-3">
             <Tags items={(page.data.categories) as CategoryData[]} />      
           </div>
           <div className="col-span-full xl:col-span-7">
             <h1 className="text-4xl xl:text-6xl text-black">
-              <span className="inline font-display font-extrabold uppercase">{asText(page.data.title)}. </span>
-              <span className="inline font-sans-condensed font-thin">{asText(page.data.subtitle)}</span>
+              <span className="inline font-sans font-extrabold uppercase">{asText(page.data.title)}. </span>
+              <span className="inline font-serif font-normal italic text-[1.05em]">{asText(page.data.subtitle)}</span>
             </h1>
           </div>
         </Container>
+        <figure className="h-[70svh]">
+          <HeroImage image={page.data.hero_image} />
+        </figure>
+        
       </header>
       <Container>
         <div className="col-span-full xl:col-span-7 xl:col-start-4">
