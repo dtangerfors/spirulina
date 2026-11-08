@@ -48,7 +48,7 @@ export default async function Home() {
   return (
     <main key={"main"} className="flex min-h-screen flex-col justify-between">
       
-      <header className="relative p-4 pt-[4.5rem] xl:pt-9 h-svh bg-primary-100">
+      <header className="relative p-4 pt-18 xl:pt-9 h-svh bg-primary-100">
         <figure className="absolute w-full h-full inset-0">
           <HeroImage image={page.data.hero_image} />
         </figure>

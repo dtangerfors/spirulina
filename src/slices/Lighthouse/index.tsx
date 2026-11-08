@@ -13,7 +13,7 @@ export type LighthouseProps = SliceComponentProps<Content.LighthouseSlice>;
 /**
  * Component for "Lighthouse" Slices.
  */
-const Lighthouse = ({ slice }: LighthouseProps): JSX.Element => {
+const Lighthouse = ({ slice }: LighthouseProps): React.JSX.Element => {
   return (
     <Container>
       <div className="col-span-full xl:col-start-4 xl:col-span-7">

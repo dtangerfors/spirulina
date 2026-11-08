@@ -1,6 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-primary-50: #eff8ff;
+  --color-primary-100: #dceefd;
+  --color-primary-200: #c1e3fc;
+  --color-primary-300: #96d2fa;
+  --color-primary-400: #64b8f6;
+  --color-primary-500: #409af1;
+  --color-primary-600: #2a7de6;
+  --color-primary-700: #236bdc;
+  --color-primary-800: #2253ab;
+  --color-primary-900: #214887;
+  --color-primary-950: #192d52;
+  --color-primary-1000: #061328;
+  --color-primary: #236bdc;
+
+  --color-gray-50: #f7f7f8;
+  --color-gray-100: #eeeef0;
+  --color-gray-200: #dadadd;
+  --color-gray-300: #b9bac0;
+  --color-gray-400: #93949d;
+  --color-gray-500: #757682;
+  --color-gray-600: #5f5f6a;
+  --color-gray-700: #4e4e56;
+  --color-gray-800: #42424a;
+  --color-gray-900: #3a3a40;
+  --color-gray-950: #151517;
+  --color-gray: #151517;
+
+  --color-white: #ffffff;
+  --color-black: #151517;
+  --color-green: #cad178;
+  --color-red: #c03221;
+
+  --font-*: initial;
+  --font-display: Aileron, sans-serif;
+  --font-sans: Aileron, sans-serif;
+  --font-serif: EB Garamond Variable, serif;
+  --font-sans-condensed: Aileron, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @property --progress {
   syntax: "<length-percentage>";
@@ -60,7 +117,7 @@ a {
     var(--color-dark) var(--progress),
     var(--color-dark-glare) 0%
   );
-  @apply w-full aspect-square grid place-items-center rounded-full bg-[conic-gradient(#236bdc,_#236bdc_var(--progress),_#dceefd_0%)]
+  @apply w-full aspect-square grid place-items-center rounded-full bg-[conic-gradient(#236bdc,#236bdc_var(--progress),#dceefd_0%)]
 }
 
 .donut-chart::after {

@@ -13,7 +13,7 @@ export type SkillsProps = SliceComponentProps<Content.SkillsSlice>;
 /**
  * Component for "Skills" Slices.
  */
-const Skills = ({ slice }: SkillsProps): JSX.Element => {
+const Skills = ({ slice }: SkillsProps): React.JSX.Element => {
   return (
     <Container>
       <div className="col-span-full xl:col-span-3 xl:sticky top-9 self-start mb-2">

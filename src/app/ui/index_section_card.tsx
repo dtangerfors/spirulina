@@ -21,7 +21,7 @@ export default function IndexSectionCard({
 
   return (
     <article>
-      <Container className="pt-20 pb-10 lg:pt-80 lg:pb-40 p-4 !-mx-4">
+      <Container className="pt-20 pb-10 lg:pt-80 lg:pb-40 p-4 -mx-4!">
         <div className="col-span-full xl:col-span-3">   
         {item.data.isComing && (
             <span className="relative font-sans-condensed font-normal text-sm uppercase leading-none pt-1 pb-1.5 px-3 rounded-3xl border-black border-[1.5px]">Coming soon</span>

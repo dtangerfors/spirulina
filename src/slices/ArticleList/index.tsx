@@ -25,7 +25,7 @@ export type ArticleListProps = SliceComponentProps<Content.ArticleListSlice>;
 /**
  * Component for "ArticleList" Slices.
  */
-const ArticleList = ({ slice }: ArticleListProps): JSX.Element => {
+const ArticleList = ({ slice }: ArticleListProps): React.JSX.Element => {
   return (
     <Container>
       <div className="col-span-full xl:col-span-7 xl:col-start-4">

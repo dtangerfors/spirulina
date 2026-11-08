@@ -13,7 +13,7 @@ export type ImageProps = SliceComponentProps<Content.ImageSlice>;
 /**
  * Component for "Image" Slices.
  */
-const Image = ({ slice }: ImageProps): JSX.Element => {
+const Image = ({ slice }: ImageProps): React.JSX.Element => {
   return (
     <Container>
       <motion.figure 

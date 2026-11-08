@@ -12,7 +12,8 @@ type PageProps = {
   uid: string;
 }
 
-export async function generateMetadata({ params }: {params: PageProps}): Promise<Metadata> {
+export async function generateMetadata(props: {params: Promise<PageProps>}): Promise<Metadata> {
+  const params = await props.params;
   const client = createClient();
   const page = await client.getByUID("category", params.uid).catch(() => notFound());
 
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: {params: PageProps}): Promise
   };
 }
 
-export default async function Category({ params }: {params: PageProps}) {
+export default async function Category(props: {params: Promise<PageProps>}) {
+  const params = await props.params;
   const client = createClient();
 
   // Query the specific category
