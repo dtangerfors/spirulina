@@ -9,6 +9,7 @@ import { CategoryData, Tags } from "./tags";
 import { HeroImage } from "@/app/ui/hero_image";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
+import { Reveal } from "@/app/ui/reveal";
 
 type PageProps = {
   uid: string;
@@ -50,8 +51,10 @@ export default async function Page(props: {params: Promise<PageProps>}) {
           </div>
           <div className="col-span-full xl:col-span-7">
             <h1 className="text-4xl xl:text-6xl text-black">
-              <span className="inline font-sans font-extrabold uppercase">{asText(page.data.title)}. </span>
-              <span className="inline font-serif font-normal italic text-[0.93em]">{asText(page.data.subtitle)}</span>
+              <Reveal>
+                <span className="inline font-sans font-extrabold uppercase">{asText(page.data.title)}. </span>
+                <span className="inline font-serif font-normal italic text-[0.93em]">{asText(page.data.subtitle)}</span>
+              </Reveal>
             </h1>
           </div>
         </Container>

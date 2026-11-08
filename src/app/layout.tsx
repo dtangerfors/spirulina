@@ -8,6 +8,7 @@ import { repositoryName } from "@/prismicio";
 import { Header } from "./ui/layout/header";
 import { Footer } from "./ui/layout/footer";
 import { SmoothScrolling } from "./ui/smooth_scrolling";
+import { PageTransition } from "./ui/page_transition";
 
 
 export const metadata: Metadata = {
@@ -21,7 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${apfelGrotezk.variable} ${maziusDisplay.variable}`}>
+    // The inline view-transition-name stops React from suppressing the root
+    // snapshot, which is the layer the page transition animates.
+    <html
+      lang="en"
+      className={`${apfelGrotezk.variable} ${maziusDisplay.variable}`}
+      style={{ viewTransitionName: "root" }}
+    >
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -33,7 +40,7 @@ export default function RootLayout({
         <SmoothScrolling>
           <Header key={"body-header"} />
           <div key={"body-main"}>
-            {children}
+            <PageTransition>{children}</PageTransition>
           </div>
           <Footer key={"body-footer"} />
         </SmoothScrolling>

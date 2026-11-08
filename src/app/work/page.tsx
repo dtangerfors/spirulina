@@ -3,6 +3,7 @@ import { CaseCard } from "@/app/ui/case_card";
 import { Container } from "@/app/ui/layout/containers";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
+import { Reveal } from "../ui/reveal";
 
 export default async function WorkPage() {
   const client = createClient();
@@ -34,7 +35,7 @@ export default async function WorkPage() {
       <header>
         <Container>
           <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
-            <h1 className="font-display text-4xl xl:text-6xl text-black font-extrabold uppercase tracking-tight">Selected work</h1>
+            <h1 className="font-display text-4xl xl:text-6xl text-black font-extrabold uppercase tracking-tight"><Reveal>Selected work</Reveal></h1>
           </div>
         </Container>
       </header>

@@ -6,13 +6,19 @@ import { CaseCard } from "./ui/case_card";
 import { PrismicRichText } from "@prismicio/react";
 import { HeroImage } from "./ui/hero_image";
 import IndexSectionCard from "./ui/index_section_card";
+import { Reveal } from "./ui/reveal";
 
 const textComponents = {
   heading1: ({ children }: {children: any}) => (
     <h1 className="text-3xl xl:text-9xl text-primary-1000 font-serif font-normal uppercase">{children}</h1>
   ),
+  // Reveal goes inside the span so the span's last: positioning still applies.
+  // reveal-hero makes it earlier, slower and softer than other headings; the
+  // bottom line follows the top one 0.25s later.
   paragraph: ({ children }: {children: any}) => (
-    <span className="leading-none inline-block last:mt-auto last:text-right md:w-1/2 last:w-2/3 xl:last:w-1/2 last:self-end">{children}</span>
+    <span className="leading-none inline-block last:mt-auto last:text-right md:w-1/2 last:w-2/3 xl:last:w-1/2 last:self-end last:[&_.reveal-inner]:[animation-delay:0.45s]">
+      <Reveal className="reveal-hero">{children}</Reveal>
+    </span>
   ),
   strong: ({ children }: {children: any}) => (
     <strong className="font-sans font-extrabold not-italic uppercase tracking-tighter">{children}</strong>
