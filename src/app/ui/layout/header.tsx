@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { Hamburger } from "./hamburger";
 import { MobileNavigation } from "./nav";
+import { Logo } from "./logo";
 
 function Link({url, label}: {url: any, label: string}) {
   return (
@@ -26,9 +27,14 @@ export function Header() {
           <Link url={"/work"} label={"Work"} />
           </span>
         </div>
-        <div className="hidden xl:flex gap-4 col-span-3 col-start-10 justify-self-end">
+        <div className="hidden xl:flex gap-4 col-start-10 col-span-2">
           <Link url={"/blog"} label={"Blog"} />
           <Link url={"/about"} label={"About"} />
+        </div>
+        <div className="max-xl:hidden col-start-12 col-span-1 justify-self-end">
+          <a href="/" className="block">
+            <Logo size={24} stroke={2} />
+          </a>
         </div>
       </div>
       <MobileNavigation open={open} setOpen={setOpen} />

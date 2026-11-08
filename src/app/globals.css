@@ -35,10 +35,9 @@
   --color-red: #c03221;
 
   --font-*: initial;
-  --font-display: Aileron, sans-serif;
-  --font-sans: Aileron, sans-serif;
-  --font-serif: EB Garamond Variable, serif;
-  --font-sans-condensed: Aileron, sans-serif;
+  --font-display: var(--font-apfel), sans-serif;
+  --font-sans: var(--font-apfel), sans-serif;
+  --font-serif: var(--font-mazius), serif;
 }
 
 /*

@@ -10,8 +10,6 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
-    "@fontsource-variable/eb-garamond": "^5.2.7",
-    "@fontsource/aileron": "^5.2.5",
     "@next/third-parties": "^16.4.5",
     "@prismicio/client": "^7.23.0",
     "@prismicio/next": "^3.0.0",

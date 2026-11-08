@@ -30,7 +30,7 @@ const Skills = ({ slice }: SkillsProps): React.JSX.Element => {
           {slice.items.map((item, i) => {
             return (
               <li 
-                key={`${slice.id}-${i}`} className="relative font-sans-condensed font-normal text-sm uppercase leading-none pt-1 pb-1.5 px-3 rounded-3xl border-black border-[1.5px]">
+                key={`${slice.id}-${i}`} className="relative font-sans font-medium text-sm tracking-wide leading-none py-1.25 px-3 rounded-3xl border-black border-[1.5px]">
                 {item.skill}
               </li>
             )

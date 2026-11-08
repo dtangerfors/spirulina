@@ -9,7 +9,7 @@ export const textComponents = {
     <h4 className="font-sans font-bold text-black text-lg pb-4 xl:[column-span:all] tracking-tight">{children}</h4>
   ),
   paragraph: ({ children }: {children: any}) => (
-    <p className="text-lg font-serif not-italic pb-6 last:pb-0 max-w-prose">{children}</p>
+    <p className="text-lg font-sans not-italic pb-6 last:pb-0 max-w-prose">{children}</p>
   ),
   list: ({ children }: {children: any}) => (<ul className="list-disc text-base pb-[2em] last:pb-0 pl-4">{children}</ul>),
   listItem: ({children}: {children: any}) => (

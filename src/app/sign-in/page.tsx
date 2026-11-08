@@ -19,7 +19,7 @@ export default async function SignIn() {
   return (
     <div className="bg-gray-100 flex justify-center items-center flex-1 py-20 xl:py-32 px-4">
       <div className="max-w-(--breakpoint-sm)">
-        <h1 className="font-semi-condensed text-3xl text-black mb-12"><span className="font-bold block">This project is protected.</span> Please authenticate to view it.</h1>
+        <h1 className="font-sans text-3xl text-black mb-12"><span className="font-bold block">This project is protected.</span> Please authenticate to view it.</h1>
         <div className="bg-white p-4">
           <form method="post" action="/api/auth/callback/credentials" className="flex flex-col gap-4">
             <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
