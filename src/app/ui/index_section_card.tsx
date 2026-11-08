@@ -24,14 +24,14 @@ export default function IndexSectionCard({
       <Container className="pt-20 pb-10 lg:pt-80 lg:pb-40 p-4 -mx-4!">
         <div className="col-span-full xl:col-span-3">   
         {item.data.isComing && (
-            <span className="relative font-sans-condensed font-normal text-sm uppercase leading-none pt-1 pb-1.5 px-3 rounded-3xl border-black border-[1.5px]">Coming soon</span>
+            <span className="relative font-sans font-medium text-sm tracking-wide leading-none py-1.25 px-3 rounded-3xl border-black border-[1.5px]">Coming soon</span>
           )}
         </div>
         <div className="col-span-full xl:col-span-7">
           <h2 className="text-4xl xl:text-6xl text-black text-balance">
             <Link href={`${item.url}`}>
               <span className="inline font-display font-normal uppercase tracking-tight">{asText(item.data.title)}. </span>
-              <span className="inline font-serif font-normal italic text-[1.05em]">{asText(item.data.subtitle)}</span>
+              <span className="inline font-serif font-normal italic text-[0.93em]">{asText(item.data.subtitle)}</span>
             </Link>
           </h2>
         </div>

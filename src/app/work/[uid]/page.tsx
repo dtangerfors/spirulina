@@ -51,7 +51,7 @@ export default async function Page(props: {params: Promise<PageProps>}) {
           <div className="col-span-full xl:col-span-7">
             <h1 className="text-4xl xl:text-6xl text-black">
               <span className="inline font-sans font-extrabold uppercase">{asText(page.data.title)}. </span>
-              <span className="inline font-serif font-normal italic text-[1.05em]">{asText(page.data.subtitle)}</span>
+              <span className="inline font-serif font-normal italic text-[0.93em]">{asText(page.data.subtitle)}</span>
             </h1>
           </div>
         </Container>
