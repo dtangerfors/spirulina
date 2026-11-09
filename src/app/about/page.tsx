@@ -6,10 +6,11 @@ import { PrismicRichText, SliceZone } from "@prismicio/react";
 import {components} from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
 import { HeroImage } from "../ui/hero_image";
+import { Reveal } from "../ui/reveal";
 
 const textComponents = {
   heading1: ({ children }: {children: any}) => (
-    <h1 className="text-3xl xl:text-6xl text-black font-serif font-normal italic text-balance">{children}</h1>
+    <h1 className="text-3xl xl:text-6xl text-black font-serif font-normal italic text-balance"><Reveal>{children}</Reveal></h1>
   ),
   strong: ({ children }: {children: any}) => (
     <strong className="font-sans font-extrabold not-italic uppercase tracking-tight">{children}</strong>

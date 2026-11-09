@@ -7,12 +7,14 @@ import * as prismic from "@prismicio/client"
 import { Container } from "@/app/ui/layout/containers";
 import { CaseCard } from "@/app/ui/case_card";
 import { asText } from "@prismicio/client";
+import { Reveal } from "@/app/ui/reveal";
 
 type PageProps = {
   uid: string;
 }
 
-export async function generateMetadata({ params }: {params: PageProps}): Promise<Metadata> {
+export async function generateMetadata(props: {params: Promise<PageProps>}): Promise<Metadata> {
+  const params = await props.params;
   const client = createClient();
   const page = await client.getByUID("category", params.uid).catch(() => notFound());
 
@@ -21,7 +23,8 @@ export async function generateMetadata({ params }: {params: PageProps}): Promise
   };
 }
 
-export default async function Category({ params }: {params: PageProps}) {
+export default async function Category(props: {params: Promise<PageProps>}) {
+  const params = await props.params;
   const client = createClient();
 
   // Query the specific category
@@ -57,8 +60,12 @@ export default async function Category({ params }: {params: PageProps}) {
       <Container>
         <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
           <h1 className="text-4xl xl:text-6xl text-black">
-            <span className="font-serif font-normal italic">Selected works in </span><br/>
-            <span className="font-sans font-extrabold uppercase tracking-tight"><PrismicText field={category.data.name} /></span>
+            <Reveal>
+              <span className="font-serif font-normal italic">Selected works in</span>
+            </Reveal>
+            <Reveal delay={0.7}>
+              <span className="font-sans font-extrabold uppercase tracking-tight"><PrismicText field={category.data.name} /></span>
+            </Reveal>
           </h1>
         </div>
       </Container>

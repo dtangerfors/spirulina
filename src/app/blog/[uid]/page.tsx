@@ -5,12 +5,14 @@ import { notFound } from "next/navigation"
 import { SliceZone } from "@prismicio/react"
 import { Container } from "@/app/ui/layout/containers";
 import {components} from "@/slices"
+import { Reveal } from "@/app/ui/reveal";
 
 type PageProps = {
   uid: string;
 }
 
-export async function generateMetadata({ params }: {params: PageProps}): Promise<Metadata> {
+export async function generateMetadata(props: {params: Promise<PageProps>}): Promise<Metadata> {
+  const params = await props.params;
   const client = createClient();
   const page = await client.getByUID("blog_post", params.uid).catch(() => notFound());
 
@@ -20,7 +22,8 @@ export async function generateMetadata({ params }: {params: PageProps}): Promise
   };
 }
 
-export default async function BlogPostPage({ params }: {params: PageProps}) {
+export default async function BlogPostPage(props: {params: Promise<PageProps>}) {
+  const params = await props.params;
   const client = createClient();
 
   const post = await client
@@ -39,7 +42,9 @@ export default async function BlogPostPage({ params }: {params: PageProps}) {
         <Container>
           <div className="col-span-full xl:col-span-7 xl:col-start-4">
             <h1 className="text-4xl xl:text-6xl text-black pb-4">
-              <span className="inline font-sans font-extrabold uppercase tracking-tight">{asText(post.data.title)}</span>
+              <Reveal>
+                <span className="inline font-sans font-extrabold uppercase tracking-tight">{asText(post.data.title)}</span>
+              </Reveal>
             </h1>
             <p>Posted on {publicationDate}</p>
           </div>

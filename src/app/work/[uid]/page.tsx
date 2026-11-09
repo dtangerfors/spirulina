@@ -9,12 +9,14 @@ import { CategoryData, Tags } from "./tags";
 import { HeroImage } from "@/app/ui/hero_image";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
+import { Reveal } from "@/app/ui/reveal";
 
 type PageProps = {
   uid: string;
 }
 
-export async function generateMetadata({ params }: {params: PageProps}): Promise<Metadata> {
+export async function generateMetadata(props: {params: Promise<PageProps>}): Promise<Metadata> {
+  const params = await props.params;
   const client = createClient();
   const page = await client.getByUID("case", params.uid).catch(() => notFound());
 
@@ -24,7 +26,8 @@ export async function generateMetadata({ params }: {params: PageProps}): Promise
   };
 }
 
-export default async function Page({ params }: {params: PageProps}) {
+export default async function Page(props: {params: Promise<PageProps>}) {
+  const params = await props.params;
   const client = createClient();
 
   const page = await client
@@ -32,7 +35,7 @@ export default async function Page({ params }: {params: PageProps}) {
       fetchLinks: ['category.name'],
     })
     .catch(() => notFound());
-  
+
   const session = await getServerSession(authOptions);
 
   if (!session && page.data.isProtected) {
@@ -48,8 +51,10 @@ export default async function Page({ params }: {params: PageProps}) {
           </div>
           <div className="col-span-full xl:col-span-7">
             <h1 className="text-4xl xl:text-6xl text-black">
-              <span className="inline font-sans font-extrabold uppercase">{asText(page.data.title)}. </span>
-              <span className="inline font-serif font-normal italic text-[1.05em]">{asText(page.data.subtitle)}</span>
+              <Reveal>
+                <span className="inline font-sans font-extrabold uppercase">{asText(page.data.title)}. </span>
+                <span className="inline font-serif font-normal italic text-[0.93em]">{asText(page.data.subtitle)}</span>
+              </Reveal>
             </h1>
           </div>
         </Container>

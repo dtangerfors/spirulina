@@ -12,7 +12,7 @@ function CaseCardContent({data}: {data: CaseDocument["data"]}) {
         <h2 className="text-base font-display font-extrabold text-black">{asText(data.title)} {data.isComing && <span className="font-sans font-normal opacity-60">(Coming soon)</span>}</h2>
         <p className="text-base font-sans text-black">{asText(data.subtitle)}</p>
       </div>
-      <figure className="relative aspect-[4/3] overflow-hidden">
+      <figure className="relative aspect-4/3 overflow-hidden">
         <PrismicNextImage field={data.thumbnail[0]?.image} className="w-full h-full object-cover"/>
       </figure>
     </>

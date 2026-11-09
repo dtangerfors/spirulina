@@ -13,7 +13,7 @@ export type SkillsProps = SliceComponentProps<Content.SkillsSlice>;
 /**
  * Component for "Skills" Slices.
  */
-const Skills = ({ slice }: SkillsProps): JSX.Element => {
+const Skills = ({ slice }: SkillsProps): React.JSX.Element => {
   return (
     <Container>
       <div className="col-span-full xl:col-span-3 xl:sticky top-9 self-start mb-2">
@@ -30,7 +30,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           {slice.items.map((item, i) => {
             return (
               <li 
-                key={`${slice.id}-${i}`} className="relative font-sans-condensed font-normal text-sm uppercase leading-none pt-1 pb-1.5 px-3 rounded-3xl border-black border-[1.5px]">
+                key={`${slice.id}-${i}`} className="relative font-sans font-medium text-sm tracking-wide leading-none py-1.25 px-3 rounded-3xl border-black border-[1.5px]">
                 {item.skill}
               </li>
             )

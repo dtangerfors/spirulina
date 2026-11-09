@@ -17,10 +17,10 @@ export type SlideshowProps = SliceComponentProps<Content.SlideshowSlice>;
 /**
  * Component for "Slideshow" Slices.
  */
-const Slideshow = ({ slice }: SlideshowProps): JSX.Element => {
+const Slideshow = ({ slice }: SlideshowProps): React.JSX.Element => {
 
   return (
-    <Container className="relative overflow-hidden !mx-0 px-4">
+    <Container className="relative overflow-hidden mx-0! px-4">
       <div className="col-span-5 xl:col-span-7 xl:col-start-4 mb-7">
         <Swiper
           spaceBetween={16}

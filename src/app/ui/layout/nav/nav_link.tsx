@@ -32,7 +32,7 @@ export function NavLink({url, title, label, setOpen}: {url: string, title: strin
       href={url}
       title={title}
       onClick={() => setOpen(!open)}
-      className={clsx("block text-5xl leading-none uppercase text-black hover:text-primary", pathname == url ? "font-display font-extrabold" : "font-sans-condensed font-thin" )}
+      className={clsx("block text-5xl leading-none uppercase text-black hover:text-primary", pathname == url ? "font-display font-extrabold" : "font-sans font-thin" )}
     >
       {label}
     </Link>

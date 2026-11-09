@@ -13,7 +13,7 @@ export type TextProps = SliceComponentProps<Content.TextSlice>;
 /**
  * Component for "Text" Slices.
  */
-const Text = ({ slice }: TextProps): JSX.Element => {
+const Text = ({ slice }: TextProps): React.JSX.Element => {
 
   
   return (
