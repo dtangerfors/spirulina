@@ -27,7 +27,7 @@ export function Header() {
         <div className="col-span-3 xl:hidden">
           <Hamburger open={open} setOpen={setOpen} />
         </div>
-        <div className="col-span-3 xl:col-span-2">
+        <div className="max-xl:hidden xl:col-span-2">
           <Link url={"/"} label={"Daniel Tängerfors"} />
         </div>
         <div className="max-xl:hidden col-start-4 col-span-4">
@@ -39,8 +39,8 @@ export function Header() {
           <Link url={"/blog"} label={"Blog"} />
           <Link url={"/about"} label={"About"} />
         </div>
-        <div className="max-xl:hidden col-start-12 col-span-1 justify-self-end">
-          <NextLink href="/" className="block">
+        <div className="col-start-6 xl:col-start-12 col-span-1 justify-self-end">
+          <NextLink href="/" className="block" aria-label="Home">
             <Logo size={24} stroke={2} />
           </NextLink>
         </div>
