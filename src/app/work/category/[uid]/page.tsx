@@ -7,6 +7,7 @@ import * as prismic from "@prismicio/client"
 import { Container } from "@/app/ui/layout/containers";
 import { CaseCard } from "@/app/ui/case_card";
 import { asText } from "@prismicio/client";
+import { Reveal } from "@/app/ui/reveal";
 
 type PageProps = {
   uid: string;
@@ -59,8 +60,12 @@ export default async function Category(props: {params: Promise<PageProps>}) {
       <Container>
         <div className="col-span-full xl:col-start-4 xl:col-span-7 py-20 xl:py-32">
           <h1 className="text-4xl xl:text-6xl text-black">
-            <span className="font-serif font-normal italic">Selected works in </span><br/>
-            <span className="font-sans font-extrabold uppercase tracking-tight"><PrismicText field={category.data.name} /></span>
+            <Reveal>
+              <span className="font-serif font-normal italic">Selected works in</span>
+            </Reveal>
+            <Reveal delay={0.7}>
+              <span className="font-sans font-extrabold uppercase tracking-tight"><PrismicText field={category.data.name} /></span>
+            </Reveal>
           </h1>
         </div>
       </Container>

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import { SliceZone } from "@prismicio/react"
 import { Container } from "@/app/ui/layout/containers";
 import {components} from "@/slices"
+import { Reveal } from "@/app/ui/reveal";
 
 type PageProps = {
   uid: string;
@@ -41,7 +42,9 @@ export default async function BlogPostPage(props: {params: Promise<PageProps>}) 
         <Container>
           <div className="col-span-full xl:col-span-7 xl:col-start-4">
             <h1 className="text-4xl xl:text-6xl text-black pb-4">
-              <span className="inline font-sans font-extrabold uppercase tracking-tight">{asText(post.data.title)}</span>
+              <Reveal>
+                <span className="inline font-sans font-extrabold uppercase tracking-tight">{asText(post.data.title)}</span>
+              </Reveal>
             </h1>
             <p>Posted on {publicationDate}</p>
           </div>

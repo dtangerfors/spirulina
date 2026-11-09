@@ -3,10 +3,11 @@ import { Metadata } from "next";
 import { Container } from "@/app/ui/layout/containers";
 import { BlogCard } from "../ui/blog_card";
 import { PrismicRichText } from "@prismicio/react";
+import { Reveal } from "../ui/reveal";
 
 const textComponents = {
   heading1: ({ children }: {children: any}) => (
-    <h1 className="text-3xl xl:text-6xl text-black font-serif font-normal italic">{children}</h1>
+    <h1 className="text-3xl xl:text-6xl text-black font-serif font-normal italic"><Reveal>{children}</Reveal></h1>
   ),
   strong: ({ children }: {children: any}) => (
     <strong className="font-sans font-extrabold not-italic uppercase tracking-tight">{children}</strong>
